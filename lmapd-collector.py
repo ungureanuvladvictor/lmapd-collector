@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -10,7 +11,7 @@ def hello_world():
 
 @app.route('/data', methods=['POST'])
 def upload_data():
-    print request.values
+    print request.form
     return jsonify({'result': 'OK'}), 200
 
 if __name__ == '__main__':
